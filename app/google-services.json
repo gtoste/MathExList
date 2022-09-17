@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "931352353127",
+    "firebase_url": "https://mathexlist-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "mathexlist",
+    "storage_bucket": "mathexlist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931352353127:android:8c03b1d41e42f30ebb37c2",
+        "android_client_info": {
+          "package_name": "com.example.mathexlist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931352353127-csvk8la081vi1gosgt660k4spmu3jl68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGNngTZ0NT2CbJYa3Th4gagoXykr2wwLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "931352353127-csvk8la081vi1gosgt660k4spmu3jl68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

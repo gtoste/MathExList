@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MathExList</string>
+    <string name="appName">BestMan</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="singin">Sing In</string>
+    <string name="singup">Sing Up</string>
 </resources>
