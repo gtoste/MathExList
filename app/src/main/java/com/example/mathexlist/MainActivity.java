@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Incorrect email or password", Toast.LENGTH_LONG).show();
                 }
             });
+        }else{
+            Intent intent = new Intent(MainActivity.this, ListMain.class);
+            startActivity(intent);
         }
 
     }
@@ -73,9 +76,10 @@ public class MainActivity extends AppCompatActivity {
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful())
                         {
+                            User user = new User(login);
                             FirebaseDatabase.getInstance("https://mathexlist-default-rtdb.europe-west1.firebasedatabase.app/")
                                     .getReference("Users")
-                                    .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).setValue(login)
+                                    .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).setValue(user)
                                     .addOnCompleteListener(task1 -> {
                                         if(task1.isSuccessful())
                                         {
