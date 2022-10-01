@@ -23,7 +23,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_marginTop="10dp"
-        android:background="@color/main_background"
+        android:background="@drawable/bg_gradient"
         android:padding="10dp"
         >
 

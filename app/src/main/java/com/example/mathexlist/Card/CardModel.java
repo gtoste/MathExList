@@ -1,4 +1,4 @@
-package com.example.mathexlist;
+package com.example.mathexlist.Card;
 
 public class CardModel {
     private String title;

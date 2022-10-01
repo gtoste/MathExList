@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
         getUserNameInput = findViewById(R.id.usernameInput);
 
         findViewById(R.id.cancel_button).setOnClickListener(v -> {
-            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(intent);
         });
         signUpButton.setOnClickListener(this::singUp);
@@ -77,7 +77,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         {
                                             Toast.makeText(RegisterActivity.this, "Registered successfully", Toast.LENGTH_LONG).show();
                                             dialog.dismiss();
-                                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                             startActivity(intent);
                                         }else{
                                             Toast.makeText(RegisterActivity.this, "Failed! Try again...", Toast.LENGTH_LONG).show();
