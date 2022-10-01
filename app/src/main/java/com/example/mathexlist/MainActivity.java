@@ -13,9 +13,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
+
+
+        if (mAuth.getCurrentUser() != null)
+        {
+            Intent intent = new Intent(MainActivity.this, Statistics.class);
+            startActivity(intent);
+        }
 
 
         Button signInButton = findViewById(R.id.singIn);
@@ -52,46 +56,20 @@ public class MainActivity extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(login, password).addOnCompleteListener(task -> {
                 if(task.isSuccessful())
                 {
-                    Intent intent = new Intent(MainActivity.this, ListMain.class);
+                    Intent intent = new Intent(MainActivity.this, Statistics.class);
                     startActivity(intent);
                 }else{
                     Toast.makeText(MainActivity.this, "Incorrect email or password", Toast.LENGTH_LONG).show();
                 }
             });
-        }else{
-            Intent intent = new Intent(MainActivity.this, ListMain.class);
-            startActivity(intent);
         }
 
     }
 
     public void singUp(View view)
     {
-        String login = emailInput.getText().toString().trim();
-        String password = passwordInput.getText().toString().trim();
-
-        if (validateInputs(login, password))
-        {
-            mAuth.createUserWithEmailAndPassword(login, password)
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful())
-                        {
-                            User user = new User(login);
-                            FirebaseDatabase.getInstance("https://mathexlist-default-rtdb.europe-west1.firebasedatabase.app/")
-                                    .getReference("Users")
-                                    .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).setValue(user)
-                                    .addOnCompleteListener(task1 -> {
-                                        if(task1.isSuccessful())
-                                        {
-                                            Toast.makeText(MainActivity.this, "Registered successfully", Toast.LENGTH_LONG).show();
-                                        }else{
-                                            Toast.makeText(MainActivity.this, "Failed! Try again...", Toast.LENGTH_LONG).show();
-                                        }
-                                    });
-                        }
-
-                    });
-        }
+        Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+        startActivity(intent);
     }
 
     private boolean validateInputs(String email, String password)

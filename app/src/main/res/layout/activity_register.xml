@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".RegisterActivity"
     android:background="@drawable/background"
     android:gravity="center"
     android:weightSum="3"
@@ -15,17 +15,6 @@
         android:orientation="vertical"
         android:gravity="center"
         android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/appName"
-            android:textSize="56sp"
-            android:textColor="@color/card_gray"
-            android:fontFamily="sans-serif"
-            android:letterSpacing="0.05"
-            android:layout_marginBottom="30dp"
-            />
 
         <EditText
             android:layout_width="match_parent"
@@ -45,6 +34,21 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/username"
+            android:textColorHint="@color/card_gray"
+            android:textAlignment="center"
+            android:autofillHints="username"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:background="@drawable/input_rounded"
+            android:id="@+id/usernameInput"
+            android:layout_marginBottom="10dp"
+            android:padding="20dp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="@string/password"
             android:textColorHint="@color/card_gray"
             android:textAlignment="center"
@@ -53,6 +57,21 @@
             android:textColor="@color/white"
             android:background="@drawable/input_rounded"
             android:id="@+id/passwordInput"
+            android:layout_marginBottom="10dp"
+            android:padding="20dp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:textColorHint="@color/card_gray"
+            android:textAlignment="center"
+            android:autofillHints="password"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:background="@drawable/input_rounded"
+            android:id="@+id/passwordInput_rep"
             android:padding="20dp"
             />
 
@@ -71,7 +90,7 @@
                 android:backgroundTint="@color/main_background"
                 android:textColor="@color/card_white"
                 android:text="@string/singin"
-                android:id="@+id/singIn"
+                android:id="@+id/singUp"
                 android:padding="20dp"
                 />
 
@@ -80,8 +99,8 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/background_secondary"
                 android:textColor="@color/card_white"
-                android:text="@string/singup"
-                android:id="@+id/singUp"
+                android:text="@string/cancel"
+                android:id="@+id/cancel_button"
                 android:padding="20dp"
                 />
 

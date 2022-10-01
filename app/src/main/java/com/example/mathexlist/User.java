@@ -1,16 +1,27 @@
 package com.example.mathexlist;
 
-import java.util.ArrayList;
-
 public class User {
-    public String email;
-    public ArrayList<ArrayList<String>> exercisesDone;
-    public ArrayList<ArrayList<String>> exercisesTODO;
+    private String email;
+    private String userName;
 
-
-    public User(String email) {
+    public User(String email, String userName) {
         this.email = email;
-        this.exercisesDone = null;
-        this.exercisesTODO = null;
+        this.userName = userName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }
